@@ -2,39 +2,8 @@
 <html>
 <head>
 <title>Exercício: Verificar Número Primo </title>
+<script src="atividade-09.js"></script>
 </head>
 <body>
-
-<script>
-
-
-const num = parseInt(prompt("Digite um número: "));
-
-function verificarPrimo(num) {
-    if (num <= 1) {
-        return false;
-    }
-    if (num <= 3) {
-        return true;
-    }
-    if (num % 2 === 0 || num % 3 === 0) {
-        return false;
-    }
-    for (let i = 5; i * i <= num; i += 6) {
-        if (num % i === 0 || num % (i + 2) === 0) {
-            return false;
-        }
-    }
-    return true;
-}
-
-
-if (verificarPrimo(num)) {
-    document.write(num + " é um número primo.");
-} else {
-    document.write(num + " não é um número primo.");
-}
-
-</script>
 </body>
 </html>
