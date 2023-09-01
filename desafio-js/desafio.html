@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title> Calculadora de Conta </title>
+ <script src="desafio.js"></script>
+ <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+<h1> Calculadora de conta </h1>
+</header>
+
+<div class="form">
+ <form id="formulario">
+
+  <label for="antesDesconto"> Preço do chopp em R$: </label> <br>
+  <input type="number" id="preco" name="preco" > <br> <br>
+
+  <label> Quantidade antes do happy hour: </label> <br>
+  <input type="number" id="quantidadeAntes" name="quantidadeAntes" > <br> <br>
+
+  <label> Quantidade após o happy hour </label> <br>
+  <input type="number" id="quantidadeDepois" name="quantidadeDepois" > <br> <br>
+  <button type="button" onclick="calcularTotal()"> Calcular </button>
+
+ </form>
+</div>
+ </div>
+
+ 
+ <script>
+      
+  
+    function calcularTotal (){
+  
+  const preco = parseFloat(document.getElementById("preco").value);
+  const quantidadeAntes = parseInt(document.getElementById("quantidadeAntes").value);
+  const quantidadeDepois = parseInt(document.getElementById("quantidadeDepois").value);
+  
+  const valorTotal = (preco * (quantidadeAntes + quantidadeDepois));
+  const taxaServico = ((preco * quantidadeDepois) * 0.10);
+  const valorFinal = (valorTotal + taxaServico);
+  
+  document.write ("Valor total da conta: <br>", valorTotal, "<br>"); 
+  document.write ("Taxa de serviço: <br>", taxaServico, "<br>");
+  document.write ("Valor final: <br>", valorFinal, "<br>");
+  
+  }
+  
+   </script>
+ 
+
+</body>
+</html>
